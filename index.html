@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue Slider</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
@@ -13,20 +16,38 @@
 <body>
     <div id="app">
         <div class="container">
-            <div class="row">
-                <div class="col-1">
+            <header class="row align-items-center">
+                <h1 class="col-12 text-center">pHoto-Slider</h1>
+            </header>
+            <div class="row align-items-center">
+                <!-- freccia sinistra -->
+                <div class="arrow-box col-2 text-end">
                     <i @click="back" class="far fa-arrow-alt-circle-left"></i>
                 </div>
-                <div class="slider-photo col-10">
-                    <img :src="photos[imgIndex]" alt="">
-                    <span class="box-dot">
-                        <i v-for="(img, index) in photos" 
-                        @click="changePhoto(index)"
-                        :class="detected(index)" 
-                        class="fas fa-dot-circle"></i>
-                    </span>
+
+                <!-- container slider -->
+                <div class="slider-photo col-8">
+                    <div class="slider-photo-box row align-items-center">
+
+                        <!-- photo -->
+                        <div class="col-12">
+                            <img :src="photos[imgIndex]" alt="">
+                        </div>
+
+                        <!-- box-dot -->
+                        <div class="col-3">
+                            <span class="box-dot">
+                                <i v-for="(img, index) in photos" 
+                                @click="changePhoto(index)"
+                                :class="detected(index)" 
+                                class="fas fa-dot-circle"></i>
+                            </span>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-1">
+
+                <!-- freccia destra -->
+                <div class="arrow-box col-2">
                     <i @click="next" class="far fa-arrow-alt-circle-right"></i>
                 </div>
             </div>

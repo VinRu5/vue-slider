@@ -36,6 +36,9 @@ new Vue({
             if (index === this.imgIndex) {
                 return 'detected';
             };
+        },
+        changePhoto: function (index) {
+            this.imgIndex = index;
         }
     }
 })

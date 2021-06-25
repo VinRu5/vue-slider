@@ -20,7 +20,10 @@
                 <div class="slider-photo col-10">
                     <img :src="photos[imgIndex]" alt="">
                     <span class="box-dot">
-                        <i v-for="(img, index) in photos" :class="detected(index)" class="fas fa-dot-circle"></i>
+                        <i v-for="(img, index) in photos" 
+                        @click="changePhoto(index)"
+                        :class="detected(index)" 
+                        class="fas fa-dot-circle"></i>
                     </span>
                 </div>
                 <div class="col-1">

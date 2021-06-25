@@ -33,7 +33,9 @@ new Vue({
             }
         },
         detected: function (index) {
-            
+            if (index === this.imgIndex) {
+                return 'detected';
+            };
         }
     }
 })

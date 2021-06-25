@@ -23,3 +23,7 @@
 .box-dot i:last-child {
     margin-right: 0;
 }
+
+.box-dot .detected {
+    color: blue;
+}

@@ -11,9 +11,10 @@ new Vue({
             './img/images-7.jpg',
         ],
         imgIndex: 0,
+        intervallSelected: null
     },
     created(){
-        setInterval(() => {
+        this.intervallSelected = setInterval(() => {
             this.next();
         }, 5000);
     },
@@ -39,6 +40,14 @@ new Vue({
         },
         changePhoto: function (index) {
             this.imgIndex = index;
+        },
+        mouseOver: function () {
+            clearInterval(this.intervallSelected);
+        },
+        mouseLeave: function () {
+            this.intervallSelected = setInterval(() => {
+                this.next();
+            }, 5000);
         }
     }
 })

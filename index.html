@@ -31,7 +31,9 @@
 
                         <!-- photo -->
                         <div class="col-12">
-                            <img :src="photos[imgIndex]" alt="">
+                            <img @mouseover="mouseOver()" 
+                            @mouseleave="mouseLeave()"
+                            :src="photos[imgIndex]" alt="">
                         </div>
 
                         <!-- box-dot -->

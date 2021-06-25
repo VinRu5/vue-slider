@@ -19,6 +19,9 @@
                 </div>
                 <div class="slider-photo col-10">
                     <img :src="photos[imgIndex]" alt="">
+                    <span class="box-dot">
+                        <i v-for="(img, index) in photos" :class="index" class="fas fa-dot-circle"></i>
+                    </span>
                 </div>
                 <div class="col-1">
                     <i @click="next" class="far fa-arrow-alt-circle-right"></i>

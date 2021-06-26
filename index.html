@@ -39,19 +39,24 @@
                         </div>
 
                         <!-- box-dot -->
-                        <div class="col-12">
-                            <div class="box-dot">
-                                <i v-for="(img, index) in photos" 
-                                @click="changePhoto(index)"
-                                :class="detected(index)" 
-                                class="fas fa-dot-circle"></i>
-                                <div class="separator"></div>
-                                <i class="fas fa-sync-alt" 
-                                :class="active"
-                                @click="noRotateButton()"></i>
-                                <!-- sistemare qui -->
+                        <div class="box-dot col-11 col-sm-8 col-md-6 col-lg-5">
+                            <div class="box-dot-inner">
+                                <div class="dot">
+                                    <i v-for="(img, index) in photos" 
+                                    @click="changePhoto(index)"
+                                    :class="detected(index)" 
+                                    class="fas fa-dot-circle"></i>
+    
+                                </div>
+    
+                                <div class="sync">
+                                    <i class="fas fa-sync-alt" 
+                                    :class="active"
+                                    @click="noRotateButton()"></i>
+                                </div>
                             </div>
                         </div>
+    
                     </div>
                 </div>
 

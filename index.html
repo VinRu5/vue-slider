@@ -19,10 +19,14 @@
             <header class="row align-items-center">
                 <h1 class="col-12 text-center">pHoto-Slider</h1>
             </header>
-            <div class="row align-items-center">
+            <main class="row align-items-center">
                 <!-- freccia sinistra -->
                 <div class="arrow-box col-2 text-end">
-                    <i @click="back" class="far fa-arrow-alt-circle-left"></i>
+                    <i 
+                    @mouseover="noRotate()" 
+                    @mouseleave="rotate()"
+                    @click="back" 
+                    class="far fa-arrow-alt-circle-left"></i>
                 </div>
 
                 <!-- container slider -->
@@ -31,9 +35,7 @@
 
                         <!-- photo -->
                         <div class="slider-photo-inner col-12">
-                            <img @mouseover="noRotate()" 
-                            @mouseleave="rotate()"
-                            :src="photos[imgIndex]" alt="">
+                            <img :src="photos[imgIndex]" alt="">
                         </div>
 
                         <!-- box-dot -->
@@ -46,7 +48,7 @@
                                 <div class="separator"></div>
                                 <i class="fas fa-sync-alt" 
                                 :class="active"
-                                @click="noRotate"></i>
+                                @click="noRotateButton()"></i>
                                 <!-- sistemare qui -->
                             </div>
                         </div>
@@ -55,9 +57,16 @@
 
                 <!-- freccia destra -->
                 <div class="arrow-box col-2 text-start">
-                    <i @click="next" class="far fa-arrow-alt-circle-right"></i>
+                    <i 
+                    @mouseover="noRotate()" 
+                    @mouseleave="rotate()"
+                    @click="next" 
+                    class="far fa-arrow-alt-circle-right"></i>
                 </div>
-            </div>
+            </main>
+            <footer>
+                
+            </footer>
         </div>
         
     </div>

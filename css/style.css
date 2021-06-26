@@ -18,7 +18,8 @@ header h1 {
     border-radius: 12px;
     padding-top: 12px;
     padding-bottom: 12px;
-    margin-top: 20px;
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
 
 .slider-photo-inner {
@@ -85,4 +86,10 @@ header h1 {
 
 .box-dot i.no-rotate {
     color: rgba(255, 255, 255, 0.5);
+}
+
+/* footer anteprima */
+footer {
+    height: 80px;
+    background-color: #488ac7;
 }

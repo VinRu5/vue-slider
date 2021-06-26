@@ -18,7 +18,8 @@ new Vue({
             '../img/images-7.jpg',
         ],
         imgIndex: 0,
-        intervallSelected: null
+        intervallSelected: null,
+        active: ''
     },
     created(){
         this.intervallSelected = setInterval(() => {
@@ -48,10 +49,11 @@ new Vue({
         changePhoto: function (index) {
             this.imgIndex = index;
         },
-        mouseOver: function () {
+        noRotate: function () {
             clearInterval(this.intervallSelected);
+            //sitemare qui
         },
-        mouseLeave: function () {
+        rotate: function () {
             this.intervallSelected = setInterval(() => {
                 this.next();
             }, 5000);

@@ -31,25 +31,30 @@
 
                         <!-- photo -->
                         <div class="slider-photo-inner col-12">
-                            <img @mouseover="mouseOver()" 
-                            @mouseleave="mouseLeave()"
+                            <img @mouseover="noRotate()" 
+                            @mouseleave="rotate()"
                             :src="photos[imgIndex]" alt="">
                         </div>
 
                         <!-- box-dot -->
-                        <div class="col-3">
-                            <span class="box-dot">
+                        <div class="col-12">
+                            <div class="box-dot">
                                 <i v-for="(img, index) in photos" 
                                 @click="changePhoto(index)"
                                 :class="detected(index)" 
                                 class="fas fa-dot-circle"></i>
-                            </span>
+                                <div class="separator"></div>
+                                <i class="fas fa-sync-alt" 
+                                :class="active"
+                                @click="noRotate"></i>
+                                <!-- sistemare qui -->
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- freccia destra -->
-                <div class="arrow-box col-2">
+                <div class="arrow-box col-2 text-start">
                     <i @click="next" class="far fa-arrow-alt-circle-right"></i>
                 </div>
             </div>

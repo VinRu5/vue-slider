@@ -10,6 +10,13 @@ new Vue({
             './img/images-4.jpg',
             './img/images-7.jpg',
         ],
+        photos2: [
+            '../img/images-1.jpg',
+            '../img/images-8.jpg',
+            '../img/images-3.jpg',
+            '../img/images-4.jpg',
+            '../img/images-7.jpg',
+        ],
         imgIndex: 0,
         intervallSelected: null
     },

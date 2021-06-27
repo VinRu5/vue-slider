@@ -16,10 +16,16 @@
 <body>
     <div id="app">
         <div class="container">
-            <header class="row align-items-center">
+            <header v-if="!fullScreen" class="row align-items-center">
                 <h1 class="col-12 text-center">pHoto-Slider</h1>
             </header>
-            <main class="row align-items-center">
+
+            <section v-if="fullScreen" class="full-screen row">
+                <div class="col-12">
+                    <img :src="photos[imgIndex]" alt="image" class="img-contain">
+                </div>
+            </section>
+            <main v-if="!fullScreen" class="row align-items-center">
                 <!-- freccia sinistra -->
                 <div class="arrow-box col-2 text-end">
                     <i 
@@ -35,7 +41,7 @@
 
                         <!-- photo -->
                         <div class="slider-photo-inner col-12">
-                            <img :src="photos[imgIndex]" alt="">
+                            <img :src="photos[imgIndex]" alt="" class="img-contain">
                         </div>
 
                         <!-- box-dot -->
@@ -69,7 +75,17 @@
                     class="far fa-arrow-alt-circle-right"></i>
                 </div>
             </main>
-            <footer>
+            <footer v-if="!fullScreen" class="row">
+                <div class="display col-12">
+                    <div class="preview row align-items-center">
+                        <div v-for="(img, index) in photos" 
+                        @click="changePhoto(index)"
+                        :class="detected(index)"
+                        class="preview-img col">
+                            <img :src="img" alt="picture" class="img-contain">
+                        </div>
+                    </div>
+                </div>
                 
             </footer>
         </div>

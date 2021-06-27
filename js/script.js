@@ -74,6 +74,9 @@ new Vue({
                 this.active = 'no-rotate';
             }
 
+        },
+        buttonFullScreen: function () {
+            this.fullScreen = !this.fullScreen;
         }
     }
 })
